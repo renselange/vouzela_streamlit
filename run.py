@@ -8,13 +8,17 @@ fname = 'POCPWA_AppExport_15-3-2022.xlsx'
 
 show_freqs = range(3,33)
 
-try:
-	dd,born = read_vouzela_excel(fname)
+
+'''try:
+	#dd,born = read_vouzela_excel(fname)
+
+	dd,born = read_vouzela_excel(uploadFile)
+
 	st.write('Carregado de "%s"'%fname,'com',dd.shape[1],'casos completos')
 except:
-	st.write('Não pode ser carregado "%s"'%fname,'   Tchau...')
+	st.write('Não pode ser carregado "%s"'%fname,'   Tchau...')'''
 
-
+born = 'now'
 
 t = '''Dados Vouzela até %s'''%born
 
@@ -24,6 +28,10 @@ page = st.sidebar.radio(
 )
 
 if page.startswith('1.'):
+
+	uploadFile = st.sidebar.file_uploader("Upload your excel file",type=["xlsx"])
+	dd,born = read_vouzela_excel(uploadFile)
+
 	st.write('Casos classificados mais recentes primeiro')
 	st.dataframe(dd)
 

@@ -16,7 +16,8 @@ def read_vouzela_excel(name):
 	t = pd.read_excel(name)
 
 # get date
-	born = datetime.datetime.fromtimestamp(getmtime(name))
+	#born = datetime.datetime.fromtimestamp(getmtime(name))
+	born = 'now'
 
 # sanitize column names by allowing only strings
 	v = [str(v).split('.')[-1].strip() for v in t.columns] 

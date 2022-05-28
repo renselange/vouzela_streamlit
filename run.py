@@ -4,21 +4,32 @@ import pandas as pd
 import numpy as np
 from read_data import read_vouzela_excel
 
-fname = 'POCPWA_AppExport_15-3-2022.xlsx'
+uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
-show_freqs = range(3,33)
+#uploadFile = st.file_uploader("Upload your excel file",type=["xlsx"]) ; st.write(type(uploadFile.name))
+
+#show_freqs = range(3,33)
 
 
-'''try:
+if uploadFile:
 	#dd,born = read_vouzela_excel(fname)
+
+	#uploadFile = st.file_uploader("Upload your excel file") #,type=["xlsx"]) ; print(uploadFile)
 
 	dd,born = read_vouzela_excel(uploadFile)
 
-	st.write('Carregado de "%s"'%fname,'com',dd.shape[1],'casos completos')
-except:
-	st.write('Não pode ser carregado "%s"'%fname,'   Tchau...')'''
+	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[1],'casos completos')
+else:
+	st.write('Não pode ser carregado "%s"'%uploadFile,'   Tchau...')
+	9/0
 
-born = 'now'
+#born = 'now'
+
+#uploadFile = st.file_uploader("Upload your excel file",type=["xlsx"])
+
+#st.write(uploadFile)
+#st.write(fname) ; uploadFile = fname
+#dd,born = read_vouzela_excel(uploadFile)
 
 t = '''Dados Vouzela até %s'''%born
 
@@ -28,10 +39,7 @@ page = st.sidebar.radio(
 )
 
 if page.startswith('1.'):
-
-	uploadFile = st.sidebar.file_uploader("Upload your excel file",type=["xlsx"])
 	dd,born = read_vouzela_excel(uploadFile)
-
 	st.write('Casos classificados mais recentes primeiro')
 	st.dataframe(dd)
 

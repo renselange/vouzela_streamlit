@@ -5,7 +5,7 @@ import datetime
 import streamlit as st
 
 
-# @st.cache
+@st.cache
 def read_vouzela_excel(name):
 
 # check if cell contents are missing ,...
@@ -19,7 +19,7 @@ def read_vouzela_excel(name):
 	born = datetime.datetime.fromtimestamp(getmtime(name))
 
 # sanitize column names by allowing only strings
-	v = [str(v).split('.')[-1].strip() for v in t.columns] 
+	v = [str(v).strip() for v in t.columns] 
 	t.columns = v
 	for v in list(zip(range(999),t.columns,v)): print('\n',v)
 
@@ -30,9 +30,15 @@ def read_vouzela_excel(name):
 	for c in [t.columns[12]] + list(t.columns[26:33]):               # <<<<<<<<<< check these columns
 		t[c] = t.apply(lambda cols: do_replacement(cols[c]), axis=1) 
 
+# turn \n separated string into a list ....
+	c = t.columns[20]
+	t[c] = t.apply(lambda cols: cols[c].split('\n'), axis=1)
+
 # from remaining lines, remove any lines with (any) missing values
 # missing can be seen when row index shows a gap ...
 	t.dropna(axis=0,inplace=True)
+
+	print(t)
 
 	return t,born
 

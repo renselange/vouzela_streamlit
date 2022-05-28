@@ -18,7 +18,7 @@ if uploadFile:
 
 	dd,born = read_vouzela_excel(uploadFile)
 
-	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[1],'casos completos')
+	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos')
 else:
 	st.write('Não pode ser carregado "%s"'%uploadFile,'   Tchau...')
 	9/0

@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from read_data import read_vouzela_excel
 
-fname = 'data/POCPWA_AppExport_15-3-2022.xlsx'
+fname = 'POCPWA_AppExport_15-3-2022.xlsx'
 
 show_freqs = range(3,33)
 

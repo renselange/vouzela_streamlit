@@ -5,7 +5,7 @@ import datetime
 import streamlit as st
 
 
-@st.cache
+# @st.cache
 def read_vouzela_excel(name):
 
 # check if cell contents are missing ,...

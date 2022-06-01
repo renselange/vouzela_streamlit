@@ -83,7 +83,7 @@ semver                2.13.0
 Send2Trash            1.8.0
 setuptools            57.4.0
 six                   1.16.0
-sklearn               0.0
+sklearn
 smmap                 5.0.0
 soupsieve             2.3.2.post1
 stack-data            0.2.0

@@ -14,3 +14,8 @@ If you want to delete this virtualenv, deactivate it first and then remove the d
 $ deactivate
 # If your virtual environment is in a directory called 'venv':
 $ rm -r venv
+
+
+run streamlit locally:
+
+streamlit run run.py

@@ -3,3 +3,4 @@ typing-extensions==4.2.0
 openpyxl==3.0.9
 unidecode
 wordcloud
+sklearn ==0.24.2

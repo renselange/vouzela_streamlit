@@ -34,3 +34,4 @@ def make_image(all_text):
 	word_cloud = WordCloud(collocations = False, background_color = 'white').generate(cleaner)
 
 	return word_cloud.to_image()
+    

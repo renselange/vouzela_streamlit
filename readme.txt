@@ -19,3 +19,8 @@ $ rm -r venv
 run streamlit locally:
 
 streamlit run run.py
+
+
+to run via github:
+
+sign into streamlit.com etc

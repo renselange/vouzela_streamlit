@@ -11,7 +11,6 @@ from word_cloud import make_image
 
 uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
-'# testing'
 
 #uploadFile = st.file_uploader("Upload your excel file",type=["xlsx"]) ; st.write(type(uploadFile.name))
 

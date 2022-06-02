@@ -12,11 +12,6 @@ from word_cloud import make_image
 uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
 
-#uploadFile = st.file_uploader("Upload your excel file",type=["xlsx"]) ; st.write(type(uploadFile.name))
-
-#show_freqs = range(3,33)
-
-
 if uploadFile:
 	#dd,born = read_vouzela_excel(fname)
 

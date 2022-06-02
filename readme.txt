@@ -1,7 +1,5 @@
 see: https://python.land/virtual-environments/virtualenv
 
-en nou dit!
-
 to create environment: go to parent directory, incantation: python3 -m venv vouzela_streamlit
 
 to use environment: go to vouzela directory vouzela_streamlit

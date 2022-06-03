@@ -3,8 +3,6 @@ import typing_extensions
 import pandas as pd
 import numpy as np
 
-#import matplotlib.pyplot as plt
-
 
 from read_data import read_vouzela_excel, collect_enchantment_responses, enchantment_order
 from word_cloud import make_image
@@ -13,28 +11,11 @@ uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
 
 if uploadFile:
-	#dd,born = read_vouzela_excel(fname)
-
-	#uploadFile = st.file_uploader("Upload your excel file") #,type=["xlsx"]) ; print(uploadFile)
 
 	dd,born = read_vouzela_excel(uploadFile)
 
 	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos')
 
-	#st.write('set',collect_enchantment_responses(dd.iloc[:,20]))
-
-	#st.write(dd.columns)
-else:
-	st.write('Não pode ser carregado "%s"'%uploadFile,'   Tchau...')
-	9/0
-
-#born = 'now'
-
-#uploadFile = st.file_uploader("Upload your excel file",type=["xlsx"])
-
-#st.write(uploadFile)
-#st.write(fname) ; uploadFile = fname
-#dd,born = read_vouzela_excel(uploadFile)
 
 when = '''Dados Vouzela até %s'''%born
 
@@ -73,6 +54,3 @@ elif page.startswith('3.'):
 		st.write(dd[f].value_counts())
 
 
-#"# take 2: Vouzela Dashboard"
-
-	#when

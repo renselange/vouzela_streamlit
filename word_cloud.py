@@ -8,10 +8,9 @@ from sklearn.feature_extraction.text import CountVectorizer
 portuguese_stop_set = set(['ano', 'as', 'com', 'da', 'das', 'de', 
                 'dos', 'eira', 'em', 'epoca', 'etc', 
                 'fora', 'ha', 'ma', 'mae', 'manha', 'meo', 
-                'meus', 'na',  'nao', 'nenhum', 'nil', #'nada'
+                'meus', 'na',  'nao', 'nil', #'nada'
                 'oais', 'ou', 'pela', 'pelo', 'que', 
-                'saiba', 'sei', 'tenha', 'tenho', 'ter',
-                'todo', 'um', 'uma','no'])
+                'saiba', 'sei', 'tenha', 'tenho', 'ter', 'um', 'uma','no'])
 
 
 def clean(t,min_length=3,stop_set={}):

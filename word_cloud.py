@@ -31,9 +31,10 @@ def make_image(all_text):
 	cleaner = clean(all_text,stop_set=portuguese_stop_set)
 
 	word_cloud = WordCloud(collocations = False, 
-        max_words = 20,
+        max_words = 30,
         width = 600,
         height = 400,
+        stopwords= [],
         background_color = 'black').generate(cleaner)
 
 	return word_cloud.to_image()

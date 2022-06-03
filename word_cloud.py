@@ -32,9 +32,9 @@ def make_image(all_text):
 
 	word_cloud = WordCloud(collocations = False, 
         max_words = 20,
-        width = 460,
-        height = 350,
-        background_color = 'white').generate(cleaner)
+        width = 600,
+        height = 400,
+        background_color = 'black').generate(cleaner)
 
 	return word_cloud.to_image()
     

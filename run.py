@@ -61,7 +61,7 @@ elif page.startswith('3.'):
 elif page.startswith('4.'):
 
 	# for now, do by sex, but by location would be far better
-	"# enchantment"
+	"# enchantmentf - sex => do be location"
 
 
 

@@ -88,7 +88,7 @@ elif page.startswith('4.'):
 
 		as_list      = ((this_country['temp_country'] + '\n').astype(str).values.sum()[:-1]).split('\n')
 
-		st.print(as_list)
+		st.write(as_list)
 
 	# add newline between cases, but remove the last one before splitting
 	#st.write(((dd[c]+'\n').astype(str).values.sum()[:-1]).split('\n'))

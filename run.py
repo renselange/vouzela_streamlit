@@ -96,7 +96,7 @@ elif page.startswith('4.'):
 
 		as_list      = ((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')
 
-		counts       = pd.DataFrame({'t': pd.DataFrame({'x':as_list})['x'].value_counts()})
+		counts       = pd.DataFrame({'t': pd.DataFrame({'x':as_list})['x'].value_counts()}) ; st.write(type(counts))
 
 		st.write(counts)
 

@@ -70,8 +70,6 @@ elif page.startswith('4.'):
 	#### to include the other languages, translate to Portuguese first
 	#### "prefix" the translation by country: PT-Encantando, EN-Encantando
 
-	"# enchantment by sex => but better by 'language' => national differences"
-
 	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1)
 
 ### add the items in portuguese
@@ -82,9 +80,11 @@ elif page.startswith('4.'):
 
 	#enchantment.set_index('Question')
 
-	#st.write(enchantment)
+	st.write(enchantment)
 
 	st.write(enchantment.index)
+
+	st.write('now loop')
 
 	for country in dd['temp_country'].unique():
 

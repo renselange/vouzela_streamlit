@@ -80,6 +80,10 @@ elif page.startswith('4.'):
 
 	enchantment = pd.DataFrame({'Question': item_list})
 
+	enchantment.set_index('Question')
+
+	st.write(enchantment)
+
 	for country in dd['temp_country'].unique():
 
 		'# %s'%country

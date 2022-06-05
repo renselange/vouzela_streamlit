@@ -80,7 +80,7 @@ elif page.startswith('4.'):
 
 	enchantment = None
 
-	st.write(enchantment.index)
+	#st.write(enchantment.index)
 
 	st.write('now loop')
 

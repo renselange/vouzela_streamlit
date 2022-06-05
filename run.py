@@ -73,9 +73,7 @@ elif page.startswith('4.'):
 
 	st.write(dd[c])
 
-	tt = dd[c].astype(str)
-
-	st.write(tt)
+	st.write(dd[c].astype(str))
 
 
 

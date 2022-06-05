@@ -74,17 +74,17 @@ elif page.startswith('4.'):
 
 ### add the items in portuguese
 
-	item_list = [seq_to_item[seq] for seq in range(16)]  # even those with freq=0 will occur
+	#item_list = [seq_to_item[seq] for seq in range(16)]  # even those with freq=0 will occur
 
-	enchantment = pd.DataFrame(index= item_list)
+	#enchantment = pd.DataFrame(index= item_list)
 
-	enchantment = None
+	#enchantment = None
 
 	#st.write(enchantment.index)
 
-	st.write('now loop')
+	#st.write('now loop')
 
-	for country in dd['temp_country'].unique():
+	for at,country in enumerate(dd['temp_country'].unique()):
 
 		'# %s'%country
 
@@ -96,7 +96,7 @@ elif page.startswith('4.'):
 
 		counts       = as_list['t'].value_counts()
 
-		enchantment  = counts if not enchantment else enchantment.join(counts,'t')
+		enchantment  = counts if at == 0 else enchantment.join(counts,'t')
 
 		st.write(counts)
 

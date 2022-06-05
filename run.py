@@ -6,7 +6,7 @@ import numpy as np
 
 from read_data import read_vouzela_excel, collect_enchantment_responses, enchantment_order
 from word_cloud import make_image
-from enchantment_pre_process import pre_process
+from enchantment_pre_process import item_to_seq, seq_to_item
 
 uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
@@ -74,11 +74,17 @@ elif page.startswith('4.'):
 
 	"# enchantment by sex => but better by 'language' => national differences"
 
+	cat = dd.column[9] # for now: sex
+
 	c = dd.columns[20]
 	#dd['prefixed'] = dd
 
 	# add newline between cases, but remove the last one before splitting
 	st.write(((dd[c]+'\n').astype(str).values.sum()[:-1]).split('\n'))
+
+	st.write(item_to_seq)
+
+	st.write(seq_to_item)
 
 	all_countries, all_enchanted = [],[]
 

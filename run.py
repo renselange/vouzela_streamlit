@@ -71,7 +71,7 @@ elif page.startswith('4.'):
 
 	c = dd.columns[20]
 
-	st.write(dd[c].astype(str).values.sum().split('\n'))
+	st.write((dd[c]+'\n').astype(str).values.sum().split('\n'))
 
 
 

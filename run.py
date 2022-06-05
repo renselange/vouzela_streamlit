@@ -71,8 +71,6 @@ elif page.startswith('4.'):
 
 	c = dd[dd.columns[20]]
 
-	st.write(dd[c])
-
 	st.write(dd[c].astype(str))
 
 

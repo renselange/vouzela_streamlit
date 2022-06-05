@@ -75,7 +75,7 @@ elif page.startswith('4.'):
 	"# enchantment by sex => but better by 'language' => national differences"
 
 	c = dd.columns[20]
-	dd['prefixed'] = dd
+	#dd['prefixed'] = dd
 
 	# add newline between cases, but remove the last one before splitting
 	st.write(((dd[c]+'\n').astype(str).values.sum()[:-1]).split('\n'))

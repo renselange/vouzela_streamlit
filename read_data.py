@@ -57,9 +57,9 @@ def read_vouzela_excel(name):
 		t[c] = t.apply(lambda cols: do_replacement(cols[c]), axis=1) 
 
 # turn \n separated string into a list ....
-	c = t.columns[20]
-	t[c] = t.apply(lambda cols: cols[c].split('\n'), axis=1)  # make lists from strings + turn into response rec
-	t['enchantment01'] = t.apply(lambda cols: ''.join(['1' if k in cols[c] else '0' for k in enchantment_order]),axis=1)
+	#c = t.columns[20]
+	#t[c] = t.apply(lambda cols: cols[c].split('\n'), axis=1)  # make lists from strings + turn into response rec
+	#t['enchantment01'] = t.apply(lambda cols: ''.join(['1' if k in cols[c] else '0' for k in enchantment_order]),axis=1)
 
 # from remaining lines, remove any lines with (any) missing values
 # missing can be seen when row index shows a gap ...

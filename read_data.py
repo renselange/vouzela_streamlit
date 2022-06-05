@@ -7,7 +7,12 @@ import openpyxl
 from unidecode import unidecode
 
 
-enchantment_order = {
+############### re-read only if necessary (via cache)
+############### make column names into strings
+############### change enchantment answers from strings to lists (in: "enchantment_iems")
+
+
+enchantment_order = {           ####### here alphabetictally ....
   "Admirado": 0,
   "Alegre": 1,
   "Calmo / Tranquilo": 2,
@@ -43,7 +48,6 @@ def read_vouzela_excel(name):
 # sanitize column names by allowing only strings
 	v = [str(v).strip() for v in t.columns] 
 	t.columns = v
-	#for v in list(zip(range(999),t.columns,v)): print('\n',v)
 
 # sort by time finished, just in case this was not done
 	t.sort_values(by='dateEnd',inplace=True,axis=0,ascending=False,ignore_index=True)
@@ -55,7 +59,7 @@ def read_vouzela_excel(name):
 # turn \n separated string into a list ....
 	c = t.columns[20]
 	t[c] = t.apply(lambda cols: cols[c].split('\n'), axis=1)  # make lists from strings + turn into response rec
-	t['enchantment_items'] = t.apply(lambda cols: ''.join(['1' if k in cols[c] else '0' for k in enchantment_order]),axis=1)
+	t['enchantment01'] = t.apply(lambda cols: ''.join(['1' if k in cols[c] else '0' for k in enchantment_order]),axis=1)
 
 # from remaining lines, remove any lines with (any) missing values
 # missing can be seen when row index shows a gap ...

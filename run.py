@@ -84,6 +84,8 @@ elif page.startswith('4.'):
 
 	st.write(enchantment)
 
+	st.write(enchantment.index)
+
 	for country in dd['temp_country'].unique():
 
 		'# %s'%country

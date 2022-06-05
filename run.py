@@ -42,8 +42,8 @@ if page.startswith('1.'):
 
 elif page.startswith('2.'):
 
-	for v in list(dd.columns): 
-		'# Questão: %s'%v
+	for seq,v in enumerate(list(dd.columns)): 
+		'# Questão: %s'%(v,seq)
 		'[Clique no cabeçalho da coluna para classificar]'
 		st.write(dd[v].value_counts())
 		try:

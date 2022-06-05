@@ -69,9 +69,11 @@ elif page.startswith('4.'):
 	# for now, do by sex, but by location would be far better
 	"# enchantment by sex => better: location"
 
-	st.write(dd[dd.columns[20]])
+	c = dd[dd.columns[20]]
 
-	tt = dd.dd[dd.columns[20]].astype(str)
+	st.write(dd[c])
+
+	tt = dd[c].astype(str)
 
 	st.write(tt)
 

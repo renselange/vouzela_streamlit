@@ -90,6 +90,10 @@ elif page.startswith('4.'):
 
 		st.write(as_list)
 
+		enchantment[country] = as_list.value_counts()
+
+		st.write(enchantment)
+
 	# add newline between cases, but remove the last one before splitting
 	#st.write(((dd[c]+'\n').astype(str).values.sum()[:-1]).split('\n'))
 

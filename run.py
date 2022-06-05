@@ -35,10 +35,10 @@ if page.startswith('1.'):
 	st.write('Casos classificados mais recentes primeiro')
 	st.dataframe(dd)
 
-	st.write(dd['enchantment01'])
 	#print(collect_enchantment_responses(dd.columns[20])) ### needed during development only
 
 ##################### show frequency + figute + stats (if possible) ########
+
 elif page.startswith('2.'):
 
 	for v in list(dd.columns): 
@@ -47,11 +47,12 @@ elif page.startswith('2.'):
 		st.write(dd[v].value_counts())
 		try:
 			st.bar_chart(dd[v].value_counts())
-			st.write(dd[v].describe())
+			st.write(dd[v].describe()) # this will crash if vals are non-numeric
 		except:
 			pass
 
 ##################### show word clouds for open-ended questions ###########
+
 elif page.startswith('3.'):
 
 	for f in dd.columns[28:33]:
@@ -62,10 +63,13 @@ elif page.startswith('3.'):
 		st.write(dd[f].value_counts())
 
 ##################### show % of enhcantment items being endorsed #########
+
 elif page.startswith('4.'):
 
 	# for now, do by sex, but by location would be far better
 	"# enchantment by sex => better: location"
+
+	st.write(dd[dd.columns[20]])
 
 
 

@@ -78,6 +78,8 @@ elif page.startswith('4.'):
 
 	enchantment = pd.DataFrame(index= item_list)
 
+	enchantment = None
+
 	st.write(enchantment.index)
 
 	st.write('now loop')
@@ -94,9 +96,11 @@ elif page.startswith('4.'):
 
 		counts       = as_list['t'].value_counts()
 
+		enchantment  = counts if not enchantment else enchantment.join(counts,'t')
+
 		st.write(counts)
 
-		enchantment.join(counts,how='left')
+		#enchantment.join(counts,how='left')
 
 		st.write(enchantment)
 

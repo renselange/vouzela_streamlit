@@ -9,7 +9,7 @@ item_to_seq = {           ####### place Portuguese first, and use its order ever
 
   "Admirado": (0,'português'),
   "Alegre": (1,'português'),
-  "Calmo / Tranquilo": (2,,'português'),
+  "Calmo / Tranquilo": (2,'português'),
   "Ciente (percepção ou compreensão aumentada)": (3,'português'),
   "Conectado (unido a algo maior do que você)": (4,'português'),
   "Deslumbrado (impressionado pela beleza de algo)": (5,'português'),

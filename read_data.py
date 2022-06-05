@@ -5,14 +5,12 @@ import datetime
 import streamlit as st
 import openpyxl
 from unidecode import unidecode
-from enchantment_pre_process import enchantment_order
+from enchantment_pre_process import item_to_seq, seq_to_item
 
 
 ############### re-read only if necessary (via cache)
 ############### make column names into strings
 ############### change enchantment answers from strings to lists (in: "enchantment_iems")
-
-
 
 @st.cache
 def read_vouzela_excel(name):

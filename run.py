@@ -96,7 +96,7 @@ elif page.startswith('4.'):
 
 		as_list      = ((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')
 
-		counts       = pd.DataFrame({'t': as_list['t']}).value_counts()
+		counts       = pd.DataFrame({'t': as_list.value_counts()})
 
 		enchantment  = counts if at == 0 else enchantment.join(counts,'t')
 

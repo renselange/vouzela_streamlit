@@ -74,7 +74,7 @@ elif page.startswith('4.'):
 
 	"# enchantment by sex => but better by 'language' => national differences"
 
-	cat = dd.column[9] # for now: sex
+	cat = dd.columns[9] # for now: sex
 
 	c = dd.columns[20]
 	#dd['prefixed'] = dd

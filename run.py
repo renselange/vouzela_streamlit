@@ -71,6 +71,10 @@ elif page.startswith('4.'):
 
 	st.write(dd[dd.columns[20]])
 
+	tt = dd.dd[dd.columns[20]].astype(str)
+
+	st.write(tt)
+
 
 
 

@@ -66,12 +66,14 @@ elif page.startswith('3.'):
 
 elif page.startswith('4.'):
 
-	# for now, do by sex, but by location would be far better
+	#### to include the other languages, translate to Portuguese first
+
+	# for now, do by sex, but by language would be far better
 	"# enchantment by sex => better: location"
 
 	c = dd.columns[20]
 
-	st.write((dd[c]+'\n').astype(str).values.sum().split('\n'))
+	st.write((dd[c]+'\n').astype(str).values.sum().split('\n')[:-1])
 
 
 

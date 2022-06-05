@@ -90,9 +90,11 @@ elif page.startswith('4.'):
 
 		as_list      = pd.DataFrame({'t':((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')})
 
+		counts       = as_list.value_counts()
+
 		st.write(as_list)
 
-		enchantment.join(as_list,how='left')
+		enchantment.join(counts,how='left')
 
 		st.write(enchantment)
 

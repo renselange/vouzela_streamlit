@@ -78,11 +78,11 @@ elif page.startswith('4.'):
 
 	item_list = [seq_to_item[seq] for seq in range(16)]  # even those with freq=0 will occur
 
-	enchantment = pd.DataFrame({'Question': item_list})
+	enchantment = pd.DataFrame(index= item_list)
 
-	enchantment.set_index('Question')
+	#enchantment.set_index('Question')
 
-	st.write(enchantment)
+	#st.write(enchantment)
 
 	st.write(enchantment.index)
 

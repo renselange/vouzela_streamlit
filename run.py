@@ -82,12 +82,12 @@ elif page.startswith('4.'):
 
 	for country in dd.columns['temp_country'].unique():
 
+		'# %s'%country
+
 		this_country = dd[dd.columns['temp_country'] == country]
 
 		as_list      = ((this_country['temp_country'] + '\n').astype(str).values.sum()[:-1]).split('\n')
 
-		'# %s'%this_country
-		
 		st.print(as_list)
 
 	# add newline between cases, but remove the last one before splitting

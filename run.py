@@ -70,26 +70,30 @@ elif page.startswith('4.'):
 	#### to include the other languages, translate to Portuguese first
 	#### "prefix" the translation by country: PT-Encantando, EN-Encantando
 
-	# for now, do by sex, but by language would be far better
-
 	"# enchantment by sex => but better by 'language' => national differences"
 
-	cat = dd.columns[9] # for now: sex
+	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1)
 
-	c = dd.columns[20]
-	#dd['prefixed'] = dd
+### add the items in portuguese
+
+	item_list = [seq_to_item[seq] for seq in range(16)]  # even those with freq=0 will occur
+
+	enchantment = pd.DataFrame({'Question': item_list})
+
+	for country in dd.columns['temp_country'].unique():
+
+		this_country = dd[dd.columns['temp_country'] == country]
+
+		as_list      = ((this_country['temp_country'] + '\n').astype(str).values.sum()[:-1]).split('\n')
+
+		'# %s'%this_country
+		
+		st.print(as_list)
 
 	# add newline between cases, but remove the last one before splitting
-	st.write(((dd[c]+'\n').astype(str).values.sum()[:-1]).split('\n'))
+	#st.write(((dd[c]+'\n').astype(str).values.sum()[:-1]).split('\n'))
 
-	st.write(item_to_seq)
-
-	st.write(seq_to_item)
-
-	all_countries, all_enchanted = [],[]
-
-	# make table, with rows = items, and cols= countries, already aggregated etc
-
+	
 
 
 

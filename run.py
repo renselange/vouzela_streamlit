@@ -35,7 +35,8 @@ if page.startswith('1.'):
 	st.write('Casos classificados mais recentes primeiro')
 	st.dataframe(dd)
 
-	#print(collect_enchantment_responses(dd.columns[20]))
+	st.write(dd['enchantment01'])
+	#print(collect_enchantment_responses(dd.columns[20])) ### needed during development only
 
 ##################### show frequency + figute + stats (if possible) ########
 elif page.startswith('2.'):
@@ -64,7 +65,8 @@ elif page.startswith('3.'):
 elif page.startswith('4.'):
 
 	# for now, do by sex, but by location would be far better
-	"# enchantmentf - sex => do be location"
+	"# enchantment by sex => better: location"
+
 
 
 

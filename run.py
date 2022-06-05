@@ -78,10 +78,6 @@ elif page.startswith('4.'):
 
 	enchantment = pd.DataFrame(index= item_list)
 
-	#enchantment.set_index('Question')
-
-	st.write(enchantment)
-
 	st.write(enchantment.index)
 
 	st.write('now loop')
@@ -94,7 +90,9 @@ elif page.startswith('4.'):
 
 		as_list      = pd.DataFrame({'t':((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')})
 
-		enchantment.join(as_list,on='Question',how='left')
+		st.write(as_list)
+
+		enchantment.join(as_list,how='left')
 
 		st.write(enchantment)
 

@@ -84,7 +84,7 @@ elif page.startswith('4.'):
 
 		'# %s'%country
 
-		this_country = dd[dd.columns['temp_country'] == country]
+		this_country = dd[dd['temp_country'] == country]
 
 		as_list      = ((this_country['temp_country'] + '\n').astype(str).values.sum()[:-1]).split('\n')
 

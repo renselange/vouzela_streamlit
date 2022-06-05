@@ -86,9 +86,11 @@ elif page.startswith('4.'):
 
 		this_country = dd[dd['temp_country'] == country]
 
-		as_list      = ((this_country['temp_country'] + '\n').astype(str).values.sum()[:-1]).split('\n')
+		as_list      = pd.DataFrame({'t':((this_country['temp_country'] + '\n').astype(str).values.sum()[:-1]).split('\n')})
 
 		st.write(as_list)
+
+		st.write(as_list.value_counts())
 
 		enchantment[country] = as_list.value_counts()
 

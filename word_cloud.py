@@ -13,6 +13,18 @@ portuguese_stop_set = set(['ano', 'as', 'com', 'da', 'das', 'de',
                 'saiba', 'sei', 'tenha', 'tenho', 'ter', 'um', 'uma','no'])
 
 
+#######
+####### do some limited cleaning ....
+####### 1. make all lower case
+####### 2. remove all diacritical marks for uniformity
+####### 3. get rid of all non-letters
+#######
+####### NOTE: Right now, we do Portuguese only, but above isn't too bad for other languages
+#######
+####### Perhaps, turn off wordcloud's automatic stopword etc rules?????
+#######
+
+
 def clean(t,min_length=3,stop_set={}):
     
     t = unidecode(t.lower()) # remove all diacritics and make lower case
@@ -24,7 +36,9 @@ def clean(t,min_length=3,stop_set={}):
     return ' '.join([v for v in t.split() if (len(v)>=min_length) and (not v in stop_set)])
     
 
-
+#######
+####### return wordcloud as image via PIL, avoid mathplotlib here
+#######
 
 def make_image(all_text):
 

@@ -6,6 +6,7 @@ import numpy as np
 
 from read_data import read_vouzela_excel, collect_enchantment_responses, enchantment_order
 from word_cloud import make_image
+from enchantment_pre_process import pre_process
 
 uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
@@ -67,13 +68,21 @@ elif page.startswith('3.'):
 elif page.startswith('4.'):
 
 	#### to include the other languages, translate to Portuguese first
+	#### "prefix" the translation by country: PT-Encantando, EN-Encantando
 
 	# for now, do by sex, but by language would be far better
-	"# enchantment by sex => better: location"
+
+	"# enchantment by sex => but better by 'language' => national differences"
 
 	c = dd.columns[20]
+	dd['prefixed'] = dd
 
+	# add newline between cases, but remove the last one before splitting
 	st.write(((dd[c]+'\n').astype(str).values.sum()[:-1]).split('\n'))
+
+	all_countries, all_enchanted = [],[]
+
+	# make table, with rows = items, and cols= countries, already aggregated etc
 
 
 

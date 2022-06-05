@@ -29,7 +29,7 @@ item_to_seq = {           ####### place Portuguese first, and use its order ever
 
 }
 
-seq_to_item = {}
+seq_to_item = {}   # looks like: {1:'Admirado', 2: ..}
 
 for w in item_to_seq:
   seq ,lang= item_to_seq[w]

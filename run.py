@@ -86,7 +86,9 @@ elif page.startswith('4.'):
 
 		'# %s'%country
 
-		this_country = dd[dd['temp_country'] == country].copy()
+		xdd = dd.copy()
+
+		this_country = xdd[xdd['temp_country'] == country]
 
 		as_list      = pd.DataFrame({'t':((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')})
 

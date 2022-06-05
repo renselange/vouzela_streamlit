@@ -92,9 +92,11 @@ elif page.startswith('4.'):
 
 		this_country = xdd[xdd['temp_country'] == country]
 
-		as_list      = pd.DataFrame({'t':((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')})
+		#as_list      = pd.DataFrame({'t':((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')})
 
-		counts       = as_list['t'].value_counts()
+		as_list      = ((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')
+
+		counts       = pd.DataFrame({'t': as_list['t']}).value_counts()
 
 		enchantment  = counts if at == 0 else enchantment.join(counts,'t')
 

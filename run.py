@@ -80,7 +80,7 @@ elif page.startswith('4.'):
 
 	enchantment = pd.DataFrame({'Question': item_list})
 
-	for country in dd.columns['temp_country'].unique():
+	for country in dd['temp_country'].unique():
 
 		'# %s'%country
 

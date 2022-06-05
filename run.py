@@ -21,7 +21,10 @@ when = '''Dados Vouzela até %s'''%born
 
 
 page = st.sidebar.radio(
-    when, ["1. Inspecione o arquivo de dados", "2. Contagens de frequência simples", "3. Wordclouds de respostas escritas"], index=0
+    when, ["1. Inspecione o arquivo de dados", 
+    "2. Contagens de frequência simples", 
+    "3. Wordclouds de respostas escritas",
+    "4. Analyze enchantment"], index=0
 )
 
 ##################### show entire data table ##################
@@ -62,6 +65,8 @@ elif page.startswith('4.'):
 
 	# for now, do by sex, but by location would be far better
 	"# enchantmentf - sex => do be location"
+
+
 
 
 

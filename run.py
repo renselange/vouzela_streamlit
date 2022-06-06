@@ -93,7 +93,7 @@ elif page.startswith('4.'):
 	enchanted['ROW-TOTAL'] = enchanted.apply(lambda cols: sum(cols[v] for v in enchanted.columns if v != 'Question'),axis=1)
 	enchanted.sort_values(by='ROW-TOTAL',inplace=True)
 
-	st.data_frame(enchanted)
+	st.dataframe(enchanted)
 
 
 

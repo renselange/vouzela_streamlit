@@ -81,7 +81,6 @@ elif page.startswith('4.'):
 	enchanted = pd.DataFrame({'Question': item_list})
 
 	for country in dd['temp_country'].unique():
-		'# %s'%country
 
 		this_country = dd[dd['temp_country'] == country]
 

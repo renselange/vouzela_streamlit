@@ -28,8 +28,7 @@ page = st.sidebar.radio(
     when, ["1. Inspecione o arquivo de dados", 
     "2. Contagens de frequência simples", 
     "3. Wordclouds de respostas escritas",
-    "4. Analyze enchantment",
-    "5. try"], index=0
+    "4. Analyze enchantment"], index=0
 )
 
 ##################### show entire data table ##################
@@ -94,37 +93,8 @@ elif page.startswith('4.'):
 	enchanted['ROW-TOTAL'] = enchanted.apply(lambda cols: sum(cols[v] for v in enchanted.columns if v != 'Question'),axis=1)
 	enchanted.sort_values(by='ROW-TOTAL',inplace=True)
 
-	st.write(enchanted)
+	st.data_frame(enchanted)
 
-
-
-
-elif page.startswith('5.'):
-
-	#### to include the other languages, translate to Portuguese first
-	#### "prefix" the translation by country: PT-Encantando, EN-Encantando
-
-	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1)
-
-	item_list = [seq_to_item[seq] for seq in range(16)] + ['COL-TOTAL']
-
-
-	enchanted = pd.DataFrame({'Question': item_list})
-
-	for this_country in dd.groupby(level=['temp_country']):
-
-		#this_country = dd[dd['temp_country'] == country]
-
-		as_list      = ((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')   # all items in one long list
-		new_freq     = [0]*17 # one more for the sum
-		for w in as_list: new_freq[item_to_seq[w][0]] += 1
-		new_freq[-1] = sum(new_freq)
-		enchanted[country.upper()+'-count'] = new_freq
-
-	enchanted['ROW-TOTAL'] = enchanted.apply(lambda cols: sum(cols[v] for v in enchanted.columns if v != 'Question'),axis=1)
-	enchanted.sort_values(by='ROW-TOTAL',inplace=True)
-
-	st.write(enchanted)
 
 
 

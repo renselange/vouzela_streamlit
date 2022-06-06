@@ -69,7 +69,7 @@ elif page.startswith('4.'):
 	#### to include the other languages, translate to Portuguese first
 	#### "prefix" the translation by country: PT-Encantando, EN-Encantando
 
-	'# Do there exist country-specific enchantment patterns?'
+	'# Os padrões de encantamento variam de acordo com o país de origem?'
 
 	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1) # remove later ....
 

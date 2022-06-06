@@ -23,7 +23,8 @@ page = st.sidebar.radio(
     when, ["1. Inspecione o arquivo de dados", 
     "2. Contagens de frequência simples", 
     "3. Wordclouds de respostas escritas",
-    "4. Analyze enchantment"], index=0
+    "4. Analyze enchantment",
+    "5. Included data based on time window"], index=0
 )
 
 ##################### show entire data table ##################
@@ -88,6 +89,13 @@ elif page.startswith('4.'):
 	enchanted.sort_values(by='ROW-TOTAL',inplace=True)
 
 	st.write(enchanted)
+
+
+################### working on time window now ###############################
+
+elif page.startswith('5.'):
+
+	"# time window is under construction now"
 
 
 

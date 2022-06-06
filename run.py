@@ -89,7 +89,7 @@ elif page.startswith('4.'):
 		enchanted[country.upper()+'-count'] = new_freq
 
 	enchanted['ROW-TOTAL'] = enchanted.apply(lambda cols: sum(cols[v] for v in enchanted.columns if v != 'Question'),axis=1)
-	enchanted.sort_values(by='ROW-TOTAL')
+	enchanted.sort_values(by='ROW-TOTAL',in_place=True)
 
 	st.write(enchanted)
 

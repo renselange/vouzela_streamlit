@@ -96,7 +96,7 @@ elif page.startswith('4.'):
 
 		new_freq     = [0]*16 # {k:0 for k in item_list}
 
-		for w in as_list: new_freq[item_to_seq[w]] += 1
+		for w in as_list: new_freq[item_to_seq[w][0]] += 1
 
 		enchanted[country] = new_freq
 

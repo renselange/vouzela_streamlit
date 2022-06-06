@@ -23,7 +23,7 @@ page = st.sidebar.radio(
     when, ["1. Inspecione o arquivo de dados", 
     "2. Contagens de frequência simples", 
     "3. Wordclouds de respostas escritas",
-    "4. Analyze enchantment",
+    "4. Padrões de encantamento específicos do país",
     "5. Select data based on time window"], index=0
 )
 

@@ -72,7 +72,7 @@ elif page.startswith('4.'):
 
 	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1)
 
-	item_list = [seq_to_item[seq] for seq in range(16)] + ['ROW-TOTAL']
+	item_list = [seq_to_item[seq] for seq in range(16)] + ['COL-TOTAL']
 
 
 	enchanted = pd.DataFrame({'Question': item_list})
@@ -88,9 +88,9 @@ elif page.startswith('4.'):
 		new_freq[-1] = sum(new_freq)
 		enchanted[country.upper()+'-count'] = new_freq
 
-	enchanted['COL-TOTAL'] = enchanted.apply(lambda cols: sum(cols[v] for v in enchanted.columns if v != 'Question'),axis=1)
+	enchanted['ROW-TOTAL'] = enchanted.apply(lambda cols: sum(cols[v] for v in enchanted.columns if v != 'Question'),axis=1)
 	enchanted.sort_values(by='ROW-TOTAL')
-	
+
 	st.write(enchanted)
 
 

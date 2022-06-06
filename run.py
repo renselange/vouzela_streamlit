@@ -2,6 +2,7 @@ import streamlit as st
 import typing_extensions
 import pandas as pd
 import numpy as np
+import copy
 
 
 from read_data import read_vouzela_excel #, collect_enchantment_responses, enchantment_order
@@ -29,7 +30,7 @@ page = st.sidebar.radio(
 
 if page.startswith('1.'):
 
-	dd,born = read_vouzela_excel(uploadFile)
+	dd,born = copy.deepcopy(read_vouzela_excel(uploadFile)) #copy.deepcopy(my_cached_function(...))																																			
 	st.write('Casos classificados mais recentes primeiro')
 	st.dataframe(dd)
 
@@ -70,7 +71,6 @@ elif page.startswith('4.'):
 	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1)
 
 	item_list = [seq_to_item[seq] for seq in range(16)] + ['COL-TOTAL']
-
 
 	enchanted = pd.DataFrame({'Question': item_list})
 

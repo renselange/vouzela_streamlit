@@ -72,6 +72,8 @@ elif page.startswith('4.'):
 
 	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1)
 
+	item_list = [seq_to_item[seq] for seq in range(16)] + ['Total']
+
 
 	enchanted = pd.DataFrame({'Question': item_list})
 

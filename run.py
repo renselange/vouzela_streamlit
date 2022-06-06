@@ -9,19 +9,13 @@ from word_cloud import make_image
 from enchantment_pre_process import item_to_seq, seq_to_item
 
 uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
-
-
-st.set_option('display.colheader_justify', 'center')
-
+#pd.set_option('display.colheader_justify', 'center')
 
 if uploadFile:
 
 	dd,born = read_vouzela_excel(uploadFile)
-
 	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos')
-
-
-when = '''Dados Vouzela até %s'''%born
+	when = '''Dados Vouzela até %s'''%born
 
 
 page = st.sidebar.radio(
@@ -85,7 +79,7 @@ elif page.startswith('4.'):
 		this_country = dd[dd['temp_country'] == country] 
 
 		as_list      = ((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')   # all items in one long list
-		new_freq     = [0]*17 # one more for the sum
+		new_freq     = [0]*17 # one more for the TOTAL
 		for w in as_list: new_freq[item_to_seq[w][0]] += 1
 		new_freq[-1] = sum(new_freq)
 		enchanted[country.upper()+'-count'] = new_freq
@@ -93,7 +87,7 @@ elif page.startswith('4.'):
 	enchanted['ROW-TOTAL'] = enchanted.apply(lambda cols: sum(cols[v] for v in enchanted.columns if v != 'Question'),axis=1)
 	enchanted.sort_values(by='ROW-TOTAL',inplace=True)
 
-	st.dataframe(enchanted)
+	st.write(enchanted)
 
 
 

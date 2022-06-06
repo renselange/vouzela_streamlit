@@ -76,7 +76,7 @@ elif page.startswith('4.'):
 
 	for country in dd['temp_country'].unique():
 
-		this_country = dd[dd['temp_country'] == country].copy()
+		this_country = dd[dd['temp_country'] == country]
 
 		as_list      = ((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')   # all items in one long list
 		new_freq     = [0]*17 # one more for the TOTAL

@@ -69,7 +69,7 @@ elif page.startswith('4.'):
 	#### to include the other languages, translate to Portuguese first
 	#### "prefix" the translation by country: PT-Encantando, EN-Encantando
 
-	'# Possible country-specific enchantment patterns?'
+	'# Do there exist country-specific enchantment patterns?'
 
 	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1)
 
@@ -91,6 +91,8 @@ elif page.startswith('4.'):
 	enchanted.sort_values(by='ROW-TOTAL',inplace=True)
 
 	st.write(enchanted)
+
+	st.write('Perhaps add stacked graphs?')
 
 
 ################### working on time window now ###############################

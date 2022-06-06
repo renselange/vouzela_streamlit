@@ -24,7 +24,7 @@ page = st.sidebar.radio(
     "2. Contagens de frequência simples", 
     "3. Wordclouds de respostas escritas",
     "4. Analyze enchantment",
-    "5. Included data based on time window"], index=0
+    "5. Select data based on time window"], index=0
 )
 
 ##################### show entire data table ##################
@@ -71,7 +71,7 @@ elif page.startswith('4.'):
 
 	'# Do there exist country-specific enchantment patterns?'
 
-	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1)
+	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1) # remove later ....
 
 	item_list = [seq_to_item[seq] for seq in range(16)] + ['COL-TOTAL']
 
@@ -92,7 +92,7 @@ elif page.startswith('4.'):
 
 	st.write(enchanted)
 
-	st.write('Perhaps add stacked graphs?')
+	'Perhaps add stacked graphs?'
 
 
 ################### working on time window now ###############################

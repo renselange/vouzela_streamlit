@@ -72,46 +72,20 @@ elif page.startswith('4.'):
 
 	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1)
 
-### add the items in portuguese
-
-	item_list = [seq_to_item[seq] for seq in range(16)]  # even those with freq=0 will occur
-
-	#enchantment = pd.DataFrame(index= item_list)
-
-	#enchantment = None
-
-	#st.write('now loop')
 
 	enchanted = pd.DataFrame({'Question': item_list})
 
-	for at,country in enumerate(dd['temp_country'].unique()):
-
+	for country in dd['temp_country'].unique():
 		'# %s'%country
 
 		this_country = dd[dd['temp_country'] == country]
 
-		#as_list      = pd.DataFrame({'t':((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')})
-
 		as_list      = ((this_country[dd.columns[20]] + '\n').astype(str).values.sum()[:-1]).split('\n')   # all items in one long list
-
-		new_freq     = [0]*16 # {k:0 for k in item_list}
-
+		new_freq     = [0]*17 # one more for the sum
 		for w in as_list: new_freq[item_to_seq[w][0]] += 1
+		new_freq[-1] = sum(new_freq)
+		enchanted[country.upper()+'-count'] = new_freq
 
-		enchanted[country] = new_freq
-
-		#counts       = pd.DataFrame({'t': pd.DataFrame({'x':as_list})['x'].value_counts()}) ; st.write(type(counts))
-
-		#st.write(counts)
-
-		#enchantment  = pd.DataFrame({country: counts[t]}) if at == 0 else enchantment.join(counts,'t')
-
-		#enchantment.join(counts,how='left')
-
-		#st.write(enchantment)
-
-	# add newline between cases, but remove the last one before splitting
-	#st.write(((dd[c]+'\n').astype(str).values.sum()[:-1]).split('\n'))
 
 	st.write(enchanted)
 

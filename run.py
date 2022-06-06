@@ -69,6 +69,8 @@ elif page.startswith('4.'):
 	#### to include the other languages, translate to Portuguese first
 	#### "prefix" the translation by country: PT-Encantando, EN-Encantando
 
+	'# Possible country-specific enchantment patterns?'
+
 	dd['temp_country'] = dd.apply(lambda cols: 'pt' if cols['Sexo'].startswith('F') else 'en',axis=1)
 
 	item_list = [seq_to_item[seq] for seq in range(16)] + ['COL-TOTAL']

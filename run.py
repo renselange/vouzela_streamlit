@@ -11,7 +11,7 @@ from enchantment_pre_process import item_to_seq, seq_to_item
 uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
 
-pd.set_option('display.colheader_justify', 'center')
+st.set_option('display.colheader_justify', 'center')
 
 
 if uploadFile:

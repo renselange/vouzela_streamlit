@@ -12,7 +12,7 @@ from enchantment_pre_process import item_to_seq, seq_to_item
 ############### make column names into strings
 ############### change enchantment answers from strings to lists (in: "enchantment_iems")
 
-#@st.cache
+@st.cache
 def read_vouzela_excel(name):
 
 # check if cell contents are missing ,...

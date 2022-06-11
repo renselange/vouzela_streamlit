@@ -21,7 +21,7 @@ if uploadFile:
 
 page = st.sidebar.radio(
     when, [
-    "9. Set time window"
+    "0. Set time window",
     "1. Inspecione o arquivo de dados", 
     "2. Contagens de frequência simples", 
     "3. Wordclouds de respostas escritas",
@@ -32,7 +32,7 @@ page = st.sidebar.radio(
 
 ##################### show entire data table ##################
 
-if page.startswith('9.'):
+if page.startswith('0.'):
 
 	'# 0 now?'
 

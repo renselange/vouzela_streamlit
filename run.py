@@ -15,8 +15,6 @@ uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
 if uploadFile:
 
-	dd,born = read_vouzela_excel(uploadFile)
-
 	if not 'first_day' in st.session_state:
 		st.session_state.first_day = min(dd['dateEnd'])
 		st.session_state.last_day = max(dd['dateEnd'])
@@ -27,7 +25,7 @@ if uploadFile:
 
 	if st.session_state.last_day < st.session_state.first_day : st.session_state.last_day = st.session_state.first_day
 
-	dd = dd[(dd['dateEnd'].dt.date >= st.session_state.first_day) & (dd['dateEnd'].dt.date <= st.session_state.last_day)]
+	dd,born = read_vouzela_excel(uploadFile,st.session_state.start_day,st.session_state.last_day)
 
 	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos. %s %s'%(st.session_state.first_day,st.session_state.last_day))
 	when = '''Dados Vouzela até %s'''%born
@@ -44,11 +42,6 @@ page = st.sidebar.radio(
 )
 
 
-##################### show entire data table ##################
-
-if page.startswith('0.'):
-
-	'# 0 now?'
 
 ##################### show entire data table ##################
 

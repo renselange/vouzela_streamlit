@@ -53,15 +53,9 @@ if page.startswith('0.'):
 ##################### show entire data table ##################
 
 if page.startswith('1.'):
-    from streamlit import caching
-    caching.clear_cache()
 
-    dd,born = read_vouzela_excel(uploadFile) #copy.deepcopy(my_cached_function(...))                                                                                                                                            
-    st.write('Casos classificados mais recentes primeiro')
-    st.dataframe(dd)
-
-    #print(collect_enchantment_responses(dd.columns[20])) ### needed during development only
-
+    st.experimental_rerun()
+    
 ##################### show frequency + figute + stats (if possible) ########
 
 elif page.startswith('2.'):

@@ -126,21 +126,14 @@ elif page.startswith('4.'):
     st.write(enchanted)
 
     fig = px.bar(        
-        enchantment,
+        enchanted,,
         x = 'Fonte de Encantamento',
-        y = [range(max(enchanted))],
+        y = [88],
         title = "Enchantment Topic by Country"
 
     )
     st.plotly_chart(fig)
 
-
-
-################### working on time window now ###############################
-
-elif page.startswith('5.'):
-
-    "# one more???"
 
 
 

@@ -23,7 +23,7 @@ if uploadFile:
 
 	st.session_state.first_day = st.sidebar.date_input('You may change start date', st.session_state.first_day,key='what 1')
 	st.session_state.last_day  = st.sidebar.date_input('You may change the end date', st.session_state.first_day,key='what 2')
-	if st.sidebar.button('Reset to include all data.'): del st.session_state.first_day
+	#if st.sidebar.button('Reset to include all data.'): del st.session_state.first_day
 
 	if st.session_state.last_day < st.session_state.first_day : st.session_state.last_day = st.session_state.first_day
 

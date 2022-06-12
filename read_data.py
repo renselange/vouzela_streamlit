@@ -45,7 +45,6 @@ def read_vouzela_excel(name,first_day=None,last_day=None):
 # from remaining lines, remove any lines with (any) missing values
 # missing can be seen when row index shows a gap ...
 
-	if first_day:
 	#t = t[(t['dateEnd'].dt.date >= first_day.dt.date) & (t['dateEnd'].dt.date <= last_day.dt.date)]
 	#	t = t[(t['dateEnd'].dt.date >= first_day) & (t['dateEnd'].dt.date <= last_day)]
 

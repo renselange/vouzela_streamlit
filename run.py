@@ -12,6 +12,11 @@ from enchantment_pre_process import item_to_seq, seq_to_item
 uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 #pd.set_option('display.colheader_justify', 'center')
 
+st.set_page_config(
+    page_title="Real-Time Data Science Dashboard",
+    page_icon="✅",
+    layout="wide",
+)
 if uploadFile:
 
     dd,born = read_vouzela_excel(uploadFile) # ,dt.datetime(1922,3,3),dt.datetime(3022,3,3)) 

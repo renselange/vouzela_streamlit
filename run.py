@@ -15,6 +15,8 @@ uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
 if uploadFile:
 
+    dd,born = read_vouzela_excel(uploadFile,'1922-03-13','3022-03-13')
+
     if not 'first_day' in st.session_state:
         st.session_state.first_day = min(dd['dateEnd'])
         st.session_state.last_day = max(dd['dateEnd'])
@@ -33,12 +35,10 @@ if uploadFile:
 
 page = st.sidebar.radio(
     when, [
-    "0. Set time window",
     "1. Inspecione o arquivo de dados", 
     "2. Contagens de frequência simples", 
     "3. Wordclouds de respostas escritas",
-    "4. Encantamento específico do país",
-    "5. Select data based on time window"], index=0
+    "4. Encantamento específico do país"], index=0
 )
 
 

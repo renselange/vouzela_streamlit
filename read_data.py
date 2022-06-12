@@ -12,8 +12,8 @@ from enchantment_pre_process import item_to_seq, seq_to_item
 ############### make column names into strings
 ############### change enchantment answers from strings to lists (in: "enchantment_iems")
 
-#@st.cache(allow_output_mutation=True)
-st.experimental_memo
+@st.cache(allow_output_mutation=True)
+#st.experimental_memo
 def read_vouzela_excel(name,first_day=None,last_day=None):
 
 # check if cell contents are missing ,...

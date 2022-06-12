@@ -49,7 +49,7 @@ def read_vouzela_excel(name,first_day=None,last_day=None):
 	#t = t[(t['dateEnd'].dt.date >= first_day.dt.date) & (t['dateEnd'].dt.date <= last_day.dt.date)]
 	#	t = t[(t['dateEnd'].dt.date >= first_day) & (t['dateEnd'].dt.date <= last_day)]
 
-	st.dropna(axis=0,inplace=True)
+	#st.dropna(axis=0,inplace=True)
 
 	return t,born
 

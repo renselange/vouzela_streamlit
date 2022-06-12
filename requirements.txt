@@ -4,3 +4,4 @@ openpyxl
 unidecode
 wordcloud
 sklearn 
+plotly

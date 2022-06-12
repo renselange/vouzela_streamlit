@@ -14,8 +14,12 @@ uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
 if uploadFile:
 
+	with st.session_state as s:
+		s.first_day = 0
+		s.last_day  = 99
+		
 	dd,born = read_vouzela_excel(uploadFile)
-	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos')
+	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos. Date range: %s %s'%(st.session_state.first_day,st.session_state.last_day))
 	when = '''Dados Vouzela até %s'''%born
 
 

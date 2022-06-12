@@ -38,6 +38,7 @@ if uploadFile:
 
 page = st.sidebar.radio(
     when, [
+    "0. The Bottom-Line",
     "1. Inspecione o arquivo de dados", 
     "2. Contagens de frequência simples", 
     "3. Wordclouds de respostas escritas",
@@ -45,6 +46,10 @@ page = st.sidebar.radio(
 )
 
 
+
+if page.startswith('0.'):
+
+    '#the most striking'
 
 ##################### show entire data table ##################
 

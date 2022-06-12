@@ -26,7 +26,8 @@ if uploadFile:
 
     if st.session_state.last_day < st.session_state.first_day : st.session_state.last_day = st.session_state.first_day
 
-    dd,born = read_vouzela_excel(uploadFile,st.session_state.first_day,st.session_state.last_day)
+    #dd,born = read_vouzela_excel(uploadFile,st.session_state.first_day,st.session_state.last_day)
+    dd = dd[(dd['dateEnd'].dt.date >= first_day) & (dd['dateEnd'].dt.date <= last_day)]
 
     st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos. %s %s'%(st.session_state.first_day,st.session_state.last_day))
     

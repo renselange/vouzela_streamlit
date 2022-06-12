@@ -12,8 +12,10 @@ from enchantment_pre_process import item_to_seq, seq_to_item
 st.set_page_config(
     page_title="Vouzela Tourism Dashboard",
     page_icon="✅",
-    layout="wide",
+    layout="wide"
 )
+
+#st.set_page_config(page_title=None, page_icon=None, layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 
 uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
@@ -129,7 +131,7 @@ elif page.startswith('4.'):
 
 elif page.startswith('5.'):
 
-    "# time window is under construction now"
+    "# one more???"
 
 
 

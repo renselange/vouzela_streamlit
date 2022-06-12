@@ -14,7 +14,7 @@ from enchantment_pre_process import item_to_seq, seq_to_item
 
 @st.cache(allow_output_mutation=True)
 #st.experimental_memo
-def read_vouzela_excel(name,first_day=None,last_day=None):
+def read_vouzela_excel(name):
 
 # check if cell contents are missing ,...
 	def do_replacement(x, by='??'): 
@@ -49,7 +49,7 @@ def read_vouzela_excel(name,first_day=None,last_day=None):
 	#t = t[(t['dateEnd'].dt.date >= first_day.dt.date) & (t['dateEnd'].dt.date <= last_day.dt.date)]
 	#	t = t[(t['dateEnd'].dt.date >= first_day) & (t['dateEnd'].dt.date <= last_day)]
 
-	#st.dropna(axis=0,inplace=True)
+	st.dropna(axis=0,inplace=True)
 
 	return t,born
 

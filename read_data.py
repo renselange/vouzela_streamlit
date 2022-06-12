@@ -43,13 +43,13 @@ def read_vouzela_excel(name):
 	#t[c] = t.apply(lambda cols: cols[c].split('\n'), axis=1)  # make lists from strings + turn into response rec
 	#t['enchantment01'] = t.apply(lambda cols: ''.join(['1' if k in cols[c] else '0' for k in enchantment_order]),axis=1)
 
-# from remaining lines, remove any lines with (any) missing values
-# missing can be seen when row index shows a gap ...
+	# from remaining lines, remove any lines with (any) missing values
+	# missing can be seen when row index shows a gap ...
 
 	#t = t[(t['dateEnd'].dt.date >= first_day.dt.date) & (t['dateEnd'].dt.date <= last_day.dt.date)]
 	#	t = t[(t['dateEnd'].dt.date >= first_day) & (t['dateEnd'].dt.date <= last_day)]
 
-	#st.dropna(axis=0,inplace=True)
+	### st.dropna(axis=0,inplace=True)
 
 	return t,born
 

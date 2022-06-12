@@ -19,12 +19,7 @@ def read_vouzela_excel(name,first_day=0,last_day=0):
 	def do_replacement(x, by='??'): 
 		return unidecode(x.lower()) if type(x) == str and len(x) > 0 and x != 'Nil' else by
 
-# try reading ...
-	try:
-		t = pd.read_excel(name)
-		9/0
-	except:
-		t = pd.read_csv(name)
+	t = pd.read_excel(name)
 
 # get date
 	born = datetime.datetime.fromtimestamp(getmtime(name))

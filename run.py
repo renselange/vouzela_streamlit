@@ -124,7 +124,16 @@ elif page.startswith('4.'):
 
     st.write(enchanted)
 
-    'Perhaps add stacked graphs?'
+    fig = px.bar(        
+        df,
+        x = 'Fonte de Encantamento',
+        y = [range(max(enchanted))],
+        title = "Enchantment Topic by Country"
+
+    )
+    st.plotly_chart(fig)
+
+    st.plotly_chart(enchantment)
 
 
 ################### working on time window now ###############################

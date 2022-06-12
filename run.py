@@ -34,12 +34,20 @@ if uploadFile:
 
 page = st.sidebar.radio(
     when, [
+    "0. Reset to time frame",
     "1. Inspecione o arquivo de dados", 
     "2. Contagens de frequência simples", 
     "3. Wordclouds de respostas escritas",
     "4. Encantamento específico do país"], index=0
 )
 
+
+if page.startswith('0.'):
+
+    dd,born = read_vouzela_excel(uploadFile) # ,dt.datetime(1922,3,3),dt.datetime(3022,3,3)) 
+
+    st.session_state.first_day = min(dd['dateEnd'])
+    st.session_state.last_day = max(dd['dateEnd'])
 
 
 ##################### show entire data table ##################

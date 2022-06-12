@@ -27,6 +27,7 @@ if uploadFile:
 
     #dd,born = read_vouzela_excel(uploadFile,st.session_state.first_day,st.session_state.last_day)
     temp = dd[(dd['dateEnd'].dt.date >= st.session_state.first_day) & (dd['dateEnd'].dt.date <= st.session_state.last_day)]
+    temp.shape
     if temp.shape[0] == 0:
         '# request not executed'
 

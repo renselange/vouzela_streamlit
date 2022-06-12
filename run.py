@@ -44,18 +44,16 @@ page = st.sidebar.radio(
 
 if page.startswith('0.'):
 
-    dd,born = read_vouzela_excel(uploadFile) # ,dt.datetime(1922,3,3),dt.datetime(3022,3,3)) 
-
-    st.session_state.first_day = min(dd['dateEnd'])
-    st.session_state.last_day = max(dd['dateEnd'])
+    '# not implemented'
 
 
 ##################### show entire data table ##################
 
 if page.startswith('1.'):
 
-    st.experimental_rerun()
-    
+    st.write('Casos classificados mais recentes primeiro')
+    st.dataframe(dd)
+
 ##################### show frequency + figute + stats (if possible) ########
 
 elif page.startswith('2.'):

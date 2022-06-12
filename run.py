@@ -44,7 +44,7 @@ page = st.sidebar.radio(
 
 if page.startswith('0.'):
 
-    '# not implemented'
+    '# rerun the program by clicking on the task bar'
 
 
 ##################### show entire data table ##################

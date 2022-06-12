@@ -13,14 +13,17 @@ from enchantment_pre_process import item_to_seq, seq_to_item
 ############### change enchantment answers from strings to lists (in: "enchantment_iems")
 
 @st.cache(allow_output_mutation=True)
-def read_vouzela_excel(name):
+def read_vouzela_excel(name,first_day=0,last_day=0):
 
 # check if cell contents are missing ,...
 	def do_replacement(x, by='??'): 
 		return unidecode(x.lower()) if type(x) == str and len(x) > 0 and x != 'Nil' else by
 
 # try reading ...
-	t = pd.read_excel(name)
+	try:
+		t = pd.read_excel(name)
+	except:
+		t = pd.read_csv(name)
 
 # get date
 	born = datetime.datetime.fromtimestamp(getmtime(name))

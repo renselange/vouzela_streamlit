@@ -126,7 +126,7 @@ elif page.startswith('4.'):
     st.write(enchanted)
 
     fig = px.bar(        
-        enchanted,,
+        enchanted,
         x = 'Fonte de Encantamento',
         y = [88],
         title = "Enchantment Topic by Country"

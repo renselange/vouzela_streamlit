@@ -29,15 +29,16 @@ if uploadFile:
 
     st.session_state.first_day = st.sidebar.date_input('You may change start date', st.session_state.first_day,key='what 1')
     st.session_state.last_day  = st.sidebar.date_input('You may change the end date', st.session_state.last_day,key='what 2')
-    st.sidebar.write('To reset the data range, restart the program by clicking the task bar')
+    st.sidebar.write('Reset the window by clicking the task bar')
 
     if st.session_state.last_day < st.session_state.first_day : st.session_state.last_day = st.session_state.first_day
 
-    #dd,born = read_vouzela_excel(uploadFile,st.session_state.first_day,st.session_state.last_day)
     temp = dd[(dd['dateEnd'].dt.date >= st.session_state.first_day) & (dd['dateEnd'].dt.date <= st.session_state.last_day)]
-    temp.shape
+    
     if temp.shape[0] == 0:
         '# request not executed'
+    else:
+        dd = temp
 
     st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos. %s %s'%(st.session_state.first_day,st.session_state.last_day)) 
     

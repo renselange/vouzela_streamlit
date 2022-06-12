@@ -17,10 +17,12 @@ if uploadFile:
 
 	dd,born = read_vouzela_excel(uploadFile)
 
-	st.session_state.first_day = min(dd['dateEnd'])
-	st.session_state.last_day = max(dd['dateEnd'])
+	if not first_day in st.session_state:
+		st.session_state.first_day = min(dd['dateEnd'])
+		st.session_state.last_day = max(dd['dateEnd'])
 
-	date = st.sidebar.date_input('optional: change start date', st.session_state.first_day)
+	first_date = st.sidebar.date_input('optional: change start date', st.session_state.first_day)
+	last_date  = st.sidebar.date_input('optional: change start date', st.session_state.first_day)
 
 	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos. %s %s'%(st.session_state.first_day,st.session_state.last_day))
 	when = '''Dados Vouzela até %s'''%born

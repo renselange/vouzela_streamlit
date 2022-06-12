@@ -16,7 +16,7 @@ uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
 if uploadFile:
 
-    dd,born = read_vouzela_excel(uploadFile,dt.datetime.fromtimestamp(1922,3,3),dt.datetime.fromtimestamp(3022,3,3)) 
+    dd,born = read_vouzela_excel(uploadFile,dt.datetime(1922,3,3),dt.datetime(3022,3,3)) 
 
     if not 'first_day' in st.session_state:
         st.session_state.first_day = min(dd['dateEnd'])

@@ -34,7 +34,7 @@ if uploadFile:
 
 page = st.sidebar.radio(
     when, [
-    "0. Reset to time frame",
+    "0. Reset time frame back to original",
     "1. Inspecione o arquivo de dados", 
     "2. Contagens de frequência simples", 
     "3. Wordclouds de respostas escritas",
@@ -53,8 +53,10 @@ if page.startswith('0.'):
 ##################### show entire data table ##################
 
 if page.startswith('1.'):
+    from streamlit import caching
+    caching.clear_cache()
 
-    #dd,born = read_vouzela_excel(uploadFile) #copy.deepcopy(my_cached_function(...))                                                                                                                                            
+    dd,born = read_vouzela_excel(uploadFile) #copy.deepcopy(my_cached_function(...))                                                                                                                                            
     st.write('Casos classificados mais recentes primeiro')
     st.dataframe(dd)
 

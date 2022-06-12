@@ -46,7 +46,7 @@ page = st.sidebar.radio(
 
 if page.startswith('1.'):
 
-    dd,born = read_vouzela_excel(uploadFile) #copy.deepcopy(my_cached_function(...))                                                                                                                                            
+    #dd,born = read_vouzela_excel(uploadFile) #copy.deepcopy(my_cached_function(...))                                                                                                                                            
     st.write('Casos classificados mais recentes primeiro')
     st.dataframe(dd)
 

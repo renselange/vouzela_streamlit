@@ -21,6 +21,8 @@ def read_vouzela_excel(name,first_day=0,last_day=0):
 
 	t = pd.read_excel(name)
 
+	t['dateEnd'] = pd.to_datetime(t['dateEnd'])
+
 # get date
 	born = datetime.datetime.fromtimestamp(getmtime(name))
 

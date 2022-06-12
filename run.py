@@ -18,7 +18,7 @@ if uploadFile:
 	st.session_state.last_day  = 99
 
 	dd,born = read_vouzela_excel(uploadFile)
-	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos. Date range: %s %s'%(st.session_state.first_day,st.session_state.last_day))
+	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos. %s %s'%(st.session_state.first_day,st.session_state.last_day))
 	when = '''Dados Vouzela até %s'''%born
 
 

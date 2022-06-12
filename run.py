@@ -128,7 +128,7 @@ elif page.startswith('4.'):
     fig = px.bar(        
         enchanted,
         x = 'Fonte de Encantamento',
-        y = [88],
+        y = enchantment['PR-count'],
         title = "Enchantment Topic by Country"
 
     )

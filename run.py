@@ -130,7 +130,6 @@ elif page.startswith('4.'):
         x = 'Fonte de Encantamento',
         y = 'PT-count',
         title = "Enchantment Topic by Country"
-
     )
     st.plotly_chart(fig)
 

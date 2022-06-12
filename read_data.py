@@ -22,6 +22,7 @@ def read_vouzela_excel(name,first_day=0,last_day=0):
 # try reading ...
 	try:
 		t = pd.read_excel(name)
+		9/0
 	except:
 		t = pd.read_csv(name)
 

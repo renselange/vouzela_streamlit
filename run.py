@@ -2,6 +2,7 @@ import streamlit as st
 import typing_extensions
 import pandas as pd
 import numpy as np
+import datetime
 
 
 
@@ -14,14 +15,12 @@ uploadFile = 'POCPWA_AppExport_15-3-2022.xlsx'
 
 if uploadFile:
 
-	st.session_state.first_day = 0
-	st.session_state.last_day  = 99
-
 	dd,born = read_vouzela_excel(uploadFile)
 
 	st.session_state.first_day = min(dd['dateEnd'])
 	st.session_state.last_day = max(dd['dateEnd'])
 
+	date = st.sidebar.date_input('optional: change start date', st.session_state.first_day)
 
 	st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos. %s %s'%(st.session_state.first_day,st.session_state.last_day))
 	when = '''Dados Vouzela até %s'''%born

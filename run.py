@@ -18,9 +18,8 @@ if uploadFile:
 
     dd,born = read_vouzela_excel(uploadFile) # ,dt.datetime(1922,3,3),dt.datetime(3022,3,3)) 
 
-    if not 'first_day' in st.session_state:
-        st.session_state.first_day = min(dd['dateEnd'])
-        st.session_state.last_day = max(dd['dateEnd'])
+    st.session_state.first_day = min(dd['dateEnd'])
+    st.session_state.last_day = max(dd['dateEnd'])
 
     st.session_state.first_day = st.sidebar.date_input('You may change start date', st.session_state.first_day,key='what 1')
     st.session_state.last_day  = st.sidebar.date_input('You may change the end date', st.session_state.last_day,key='what 2')

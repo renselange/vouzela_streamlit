@@ -17,7 +17,7 @@ if uploadFile:
 
 	dd,born = read_vouzela_excel(uploadFile)
 
-	if not first_day in st.session_state:
+	if not 'first_day' in st.session_state:
 		st.session_state.first_day = min(dd['dateEnd'])
 		st.session_state.last_day = max(dd['dateEnd'])
 

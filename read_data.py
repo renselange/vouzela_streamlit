@@ -1,7 +1,7 @@
 import pandas as pd
 
 from os.path import getmtime
-import datetime 
+import datetime as dt
 import streamlit as st
 import openpyxl
 from unidecode import unidecode
@@ -24,7 +24,7 @@ def read_vouzela_excel(name,first_day=0,last_day=0):
 	t['dateEnd'] = pd.to_datetime(t['dateEnd'])
 
 # get date
-	born = datetime.datetime.fromtimestamp(getmtime(name))
+	born = dt.datetime.fromtimestamp(getmtime(name))
 
 # sanitize column names by allowing only strings
 	v = [str(v).strip() for v in t.columns] 

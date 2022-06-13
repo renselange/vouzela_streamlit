@@ -62,7 +62,7 @@ page = st.sidebar.radio(
 
 if page.startswith('1.'):
 
-    '#the most striking'
+    '#DA The most striking'
 
 ##################### show entire data table ##################
 

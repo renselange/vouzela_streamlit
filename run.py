@@ -132,7 +132,7 @@ elif page.startswith('4.'):
     bar_ax = bar_fig.add_subplot(111)
 
     sub_enchanted = enchanted.iloc[:-1,1:-1] #[enchanted.columns[1:-1].iloc[-1]].T
-    sub_enchanted.index = enchanted['Fonte de Encantamento']
+    sub_enchanted.index = enchanted['Fonte de Encantamento'].iloc[:-1]
 
     sub_enchanted.plot.bar(alpha=0.8, ax=bar_ax, title="counts *** simulatee data here")
 

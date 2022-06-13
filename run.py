@@ -140,7 +140,9 @@ elif page.startswith('4.'):
 
     sub_enchanted = enchanted[enchanted.columns[1:-1]].T
 
-    sub_enchanted.plot.bar(alpha=0.8, ax=bar_ax, title="counts");
+    sub_enchanted.plot.bar(alpha=0.8, ax=bar_ax, title="counts")
+
+    st.pyplot(plt)
 
 
 

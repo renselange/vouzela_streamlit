@@ -51,29 +51,29 @@ if uploadFile:
 
 page = st.sidebar.radio(
     when, [
-    "0. The Bottom-Line",
-    "1. Inspecione o arquivo de dados", 
-    "2. Contagens de frequência simples", 
-    "3. Wordclouds de respostas escritas",
-    "4. Encantamento específico do país"], index=0
+    "1. The Bottom-Line",
+    "2. Inspecione o arquivo de dados", 
+    "3. Contagens de frequência simples", 
+    "4. Wordclouds de respostas escritas",
+    "5. Encantamento específico do país"], index=0
 )
 
 
 
-if page.startswith('0.'):
+if page.startswith('1.'):
 
     '#the most striking'
 
 ##################### show entire data table ##################
 
-if page.startswith('1.'):
+if page.startswith('2.'):
 
     st.write('Casos classificados mais recentes primeiro')
     st.dataframe(dd)
 
 ##################### show frequency + figute + stats (if possible) ########
 
-elif page.startswith('2.'):
+elif page.startswith('3.'):
 
     for seq,v in enumerate(list(dd.columns)): 
         '# Questão: %s [%d]'%(v,seq)
@@ -87,7 +87,7 @@ elif page.startswith('2.'):
 
 ##################### show word clouds for open-ended questions ###########
 
-elif page.startswith('3.'):
+elif page.startswith('4.'):
 
     for f in dd.columns[28:33]:
         '**%s**'%f
@@ -98,7 +98,7 @@ elif page.startswith('3.'):
 
 ##################### show % of enhcantment items being endorsed #########
 
-elif page.startswith('4.'):
+elif page.startswith('5.'):
 
     #### to include the other languages, translate to Portuguese first
     #### "prefix" the translation by country: PT-Encantando, EN-Encantando

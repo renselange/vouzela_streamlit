@@ -46,7 +46,7 @@ if uploadFile:
 
     st.write('Carregado de "%s"'%uploadFile,'com',dd.shape[0],'casos completos. %s %s'%(st.session_state.first_day,st.session_state.last_day)) 
     
-    when = '''Dados Vouzela até %s'''%born
+    when = '''XDados Vouzela até %s'''%born
 
 
 page = st.sidebar.radio(

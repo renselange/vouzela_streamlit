@@ -126,19 +126,12 @@ elif page.startswith('4.'):
 
     st.write(enchanted)
 
-    #fig = px.bar(        
-    #    enchanted,
-    #    x = 'Fonte de Encantamento',
-    #    y = 'PT-count',
-    #    title = "Enchantment Topic by Country"
-    #)
-    #st.plotly_chart(fig)
 
-    bar_fig = plt.pyplot.figure(figsize=(8,7))
+    bar_fig = plt.pyplot.figure(figsize=(5,7))
 
     bar_ax = bar_fig.add_subplot(111)
 
-    sub_enchanted = enchanted[enchanted.columns[1:-1]].T
+    sub_enchanted = enchanted[enchanted.columns[1:-1].iloc[:-1]].T
 
     sub_enchanted.plot.bar(alpha=0.8, ax=bar_ax, title="counts")
 

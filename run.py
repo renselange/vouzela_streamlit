@@ -127,7 +127,7 @@ elif page.startswith('4.'):
     st.write(enchanted)
 
 
-    bar_fig = plt.pyplot.figure(figsize=(5,7))
+    bar_fig = plt.pyplot.figure(figsize=(7,4))
 
     bar_ax = bar_fig.add_subplot(111)
 

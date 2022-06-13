@@ -5,6 +5,7 @@ import numpy as np
 import datetime as dt
 from os.path import getmtime
 import plotly.express as px  # interactive charts
+import matplotlib as plt
 
 from read_data import read_vouzela_excel #, collect_enchantment_responses, enchantment_order
 from word_cloud import make_image

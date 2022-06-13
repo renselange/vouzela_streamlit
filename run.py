@@ -134,7 +134,7 @@ elif page.startswith('4.'):
     #)
     #st.plotly_chart(fig)
 
-    bar_fig = plt.figure() #figsize=(8,7))
+    bar_fig = plt.fig(figsize=(8,7))
 
     bar_ax = bar_fig.add_subplot(111)
 

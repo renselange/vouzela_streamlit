@@ -142,7 +142,7 @@ elif page.startswith('4.'):
 
     sub_enchanted.plot.bar(alpha=0.8, ax=bar_ax, title="counts")
 
-    st.pyplot(bar_ax)
+    st.pyplot(bar_fig)
 
 
 

@@ -128,13 +128,11 @@ elif page.startswith('4.'):
 
 
     bar_fig = plt.pyplot.figure(figsize=(7,4),tight_layout=True)
-
     bar_ax = bar_fig.add_subplot(111)
 
-    sub_enchanted = enchanted.iloc[:-1,1:-1] #[enchanted.columns[1:-1].iloc[-1]].T
+    sub_enchanted = enchanted.iloc[:-1,1:-1] 
     sub_enchanted.index = enchanted['Fonte de Encantamento'].iloc[:-1]
-
-    sub_enchanted.plot.bar(alpha=0.8, ax=bar_ax, title="counts *** simulatee data here")
+    sub_enchanted.plot.bar(alpha=0.8, ax=bar_ax, title="counts *** simulated data here")
 
     st.pyplot(bar_fig)
 
